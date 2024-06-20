@@ -172,7 +172,7 @@ const VerityCallouts: React.FC = () => {
           ) : (
             <></>
           )}
-          <p className="text-lg">As formally seen on Levante</p>
+          <p className="text-lg">As formerly seen on Levante</p>
         </div>
       )}
 
