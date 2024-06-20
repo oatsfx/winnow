@@ -1,13 +1,195 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  @font-face {
+    font-family: "Overused Grotesk";
+    font-style: thin;
+    font-weight: 100;
+    font-display: swap;
+    src: url(/src/fonts/overused-grotesk/OverusedGrotesk-Light.woff2);
+  }
+  @font-face {
+    font-family: "Overused Grotesk";
+    font-style: extralight;
+    font-weight: 200;
+    font-display: swap;
+    src: url(/src/fonts/overused-grotesk/OverusedGrotesk-Light.woff2);
+  }
+  @font-face {
+    font-family: "Overused Grotesk";
+    font-style: light;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/src/fonts/overused-grotesk/OverusedGrotesk-Book.woff2);
+  }
+  @font-face {
+    font-family: "Overused Grotesk";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/src/fonts/overused-grotesk/OverusedGrotesk-Roman.woff2);
+  }
+  @font-face {
+    font-family: "Overused Grotesk";
+    font-style: medium;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/src/fonts/overused-grotesk/OverusedGrotesk-Medium.woff2);
+  }
+  @font-face {
+    font-family: "Overused Grotesk";
+    font-style: semibold;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/src/fonts/overused-grotesk/OverusedGrotesk-SemiBold.woff2);
+  }
+  @font-face {
+    font-family: "Overused Grotesk";
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/src/fonts/overused-grotesk/OverusedGrotesk-Bold.woff2);
+  }
+  @font-face {
+    font-family: "Overused Grotesk";
+    font-style: extrabold;
+    font-weight: 800;
+    font-display: swap;
+    src: url(/src/fonts/overused-grotesk/OverusedGrotesk-ExtraBold.woff2);
+  }
+  @font-face {
+    font-family: "Overused Grotesk";
+    font-style: black;
+    font-weight: 900;
+    font-display: swap;
+    src: url(/src/fonts/overused-grotesk/OverusedGrotesk-Black.woff2);
+  }
+  @font-face {
+    font-family: "Unbounded";
+    font-style: extralight;
+    font-weight: 200;
+    font-display: swap;
+    src: url(/src/fonts/unbounded/Unbounded-ExtraLight.ttf);
+  }
+  @font-face {
+    font-family: "Unbounded";
+    font-style: light;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/src/fonts/unbounded/Unbounded-Light.ttf);
+  }
+  @font-face {
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/src/fonts/unbounded/Unbounded-Regular.ttf);
+  }
+  @font-face {
+    font-family: "Unbounded";
+    font-style: medium;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/src/fonts/unbounded/Unbounded-Medium.ttf);
+  }
+  @font-face {
+    font-family: "Unbounded";
+    font-style: semibold;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/src/fonts/unbounded/Unbounded-SemiBold.ttf);
+  }
+  @font-face {
+    font-family: "Unbounded";
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/src/fonts/unbounded/Unbounded-Bold.ttf);
+  }
+  @font-face {
+    font-family: "Unbounded";
+    font-style: extrabold;
+    font-weight: 800;
+    font-display: swap;
+    src: url(/src/fonts/unbounded/Unbounded-ExtraBold.ttf);
+  }
+  @font-face {
+    font-family: "Unbounded";
+    font-style: black;
+    font-weight: 900;
+    font-display: swap;
+    src: url(/src/fonts/unbounded/Unbounded-Black.ttf);
+  }
+  @font-face {
+    font-family: "Neue Haas";
+    font-style: thin;
+    font-weight: 100;
+    font-display: swap;
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-XXThin.ttf);
+  }
+  @font-face {
+    font-family: "Neue Haas";
+    font-style: extralight;
+    font-weight: 200;
+    font-display: swap;
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-XThin.ttf);
+  }
+  @font-face {
+    font-family: "Neue Haas";
+    font-style: light;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Thin.ttf);
+  }
+  @font-face {
+    font-family: "Neue Haas";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Light.ttf);
+  }
+  @font-face {
+    font-family: "Neue Haas";
+    font-style: medium;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Roman.ttf);
+  }
+  @font-face {
+    font-family: "Neue Haas";
+    font-style: semibold;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/src/fonts/neue-haas/NHaasGroteskDSPro-65Md.ttf);
+  }
+  @font-face {
+    font-family: "Neue Haas";
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Bold.ttf);
+  }
+  @font-face {
+    font-family: "Neue Haas";
+    font-style: extrabold;
+    font-weight: 800;
+    font-display: swap;
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Black.ttf);
+  }
+  @font-face {
+    font-family: "Neue Haas";
+    font-style: black;
+    font-weight: 900;
+    font-display: swap;
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Black.ttf);
+  }
+  @font-face {
+    font-family: "Symbols";
+    font-style: medium;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/src/fonts/Braytech-Symbols.ttf);
+  }
 }
