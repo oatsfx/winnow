@@ -3,11 +3,11 @@ const pack = require("../../../package.json");
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer footer-center p-4 bg-base-200 text-base-content">
+    <footer className="footer footer-center sticky top-[100vh] p-4 bg-base-200 text-base-content">
       <aside>
         <p>
           {pack.name} v{pack.version} - Created by{" "}
-          <a href="https://oatsfx.com/" target="_blank">
+          <a className="underline" href="https://oatsfx.com/" target="_blank">
             @OatsFX
           </a>
         </p>

@@ -5,7 +5,7 @@ import { Footer } from "components/Footer";
 
 const Layout: React.FC = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full min-h-screen bg-gradient-to-b from-primary/10 to-[8rem]">
       <Header />
       <PageView />
       <Footer />

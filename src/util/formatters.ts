@@ -94,5 +94,9 @@ export const getOutsideShapesLeft = (
 };
 
 export const replaceNonEnglish = (str: string) => {
-  return str.replace("ê", "e").replace("à", "a").replace("È", "E");
+  return str
+    .replace("ê", "e")
+    .replace("à", "a")
+    .replace("È", "E")
+    .replace("…", "...");
 };

@@ -6,7 +6,7 @@ const ViewPort: React.FC<{ Component: LazyExoticComponent<React.FC> }> = ({
   Component,
 }) => {
   return (
-    <div className="w-full h-full flex justify-center py-6">
+    <div className="w-full h-full flex justify-center py-10">
       <div className="flex-grow container">
         <Component />
       </div>
@@ -23,7 +23,6 @@ const AllRoutes: React.FC = () => (
         element={<ViewPort Component={route.component} />}
       />
     ))}
-    <Route path="*" element={<Navigate to="/" />} />
   </Routes>
 );
 
