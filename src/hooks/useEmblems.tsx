@@ -4,7 +4,6 @@ import { Emblem } from "types/emblem";
 export const useEmblems = () => {
   const url = "https://www.bungie.net/Platform/Destiny2/Manifest/";
   const HEADER = "https://www.bungie.net";
-  const API_KEY = "34d3ba0e2ae9494daffdcd6901133748";
   const [data, setData] = useState<Emblem[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -58,7 +57,6 @@ export const useEmblems = () => {
         } finally {
         }
         setData(newEmblems);
-        console.log(invItemUrl);
       } catch (error) {
         console.log(error);
       } finally {

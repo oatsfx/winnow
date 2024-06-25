@@ -2,16 +2,22 @@ import React from "react";
 
 const routes = [
   {
+    path: "/",
+    key: "home",
+    name: "Home",
+    component: React.lazy(() => import("pages/Home")),
+  },
+  {
     path: "/emblem-try-on",
     key: "emblem",
     name: "Emblem Try On",
     component: React.lazy(() => import("pages/EmblemTryOn")),
   },
   {
-    path: "/verity-callouts",
+    path: "/verity-calculator",
     key: "verity",
-    name: "Verity Callouts",
-    component: React.lazy(() => import("pages/VerityCallouts")),
+    name: "Verity Calculator",
+    component: React.lazy(() => import("pages/VerityCalculator")),
   },
 ];
 

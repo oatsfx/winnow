@@ -64,7 +64,7 @@ const VerityCallouts: React.FC = () => {
 
   return (
     <div className="flex w-full flex-col items-center gap-2">
-      <p className="font-bold text-2xl font-display tracking-tighter">
+      <p className="font-bold text-2xl font-display tracking-tighter text-accent">
         Emblem Try On
       </p>
 
@@ -72,7 +72,6 @@ const VerityCallouts: React.FC = () => {
         <Loader />
       ) : (
         <div className="flex w-full flex-col items-center gap-3">
-          <p className="text-xl font-semibold">Try On Result</p>
           <input
             type="text"
             placeholder="Name"
@@ -81,7 +80,12 @@ const VerityCallouts: React.FC = () => {
             className="input input-bordered w-full max-w-xs"
           />
           <EmblemNameplate name={name} emblem={selectedEmblem} />
-          <p className="text-lg font-medium">Trying on {selectedEmblem.name}</p>
+          <p className="text-lg">
+            Trying on{" "}
+            <span className="text-primary font-semibold">
+              {selectedEmblem.name}
+            </span>
+          </p>
           <input
             type="text"
             placeholder="Search an emblem"
@@ -93,16 +97,17 @@ const VerityCallouts: React.FC = () => {
           {showSearch &&
           emblemData.filter(
             (x) =>
-              x.name.toLowerCase().includes(emblemQuery) &&
+              replaceNonEnglish(x.name).toLowerCase().includes(emblemQuery) &&
               emblemQuery.length > 0
           ).length > 0 ? (
-            <div className="absolute top-[480px] z-[50] border w-80 rounded gap-1 p-2 flex flex-col bg-base-100">
+            <div className="absolute top-[405px] z-[50] border w-80 rounded gap-1 p-2 flex flex-col bg-base-100">
               {emblemData
                 .filter(
                   (x) =>
                     replaceNonEnglish(x.name)
                       .toLowerCase()
-                      .includes(emblemQuery) && emblemQuery.length > 0
+                      .includes(emblemQuery.toLowerCase()) &&
+                    emblemQuery.length > 0
                 )
                 .slice(0, 7)
                 .map((emblem) => (
@@ -172,7 +177,12 @@ const VerityCallouts: React.FC = () => {
           ) : (
             <></>
           )}
-          <p className="text-lg">As formally seen on Levante</p>
+          <p className="font-light">
+            As formerly seen on{" "}
+            <a className="underline" href="https://levante.dev" target="_blank">
+              Levante
+            </a>
+          </p>
         </div>
       )}
 

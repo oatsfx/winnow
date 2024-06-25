@@ -61,7 +61,7 @@ const OutsideCallouts = ({
             className={
               "w-16 btn" +
               (selectedShapes[side as keyof typeof selectedShapes] === shape
-                ? " btn-info"
+                ? " btn-accent"
                 : "")
             }
             onClick={() => {
@@ -80,7 +80,7 @@ const OutsideCallouts = ({
             className={
               "w-16 btn" +
               (selectedShapes[side as keyof typeof selectedShapes] === shape
-                ? " btn-info"
+                ? " btn-accent"
                 : "")
             }
             onClick={() => {
