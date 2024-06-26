@@ -169,14 +169,14 @@
     font-style: bold;
     font-weight: 700;
     font-display: swap;
-    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Bold.ttf);
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Mediu.ttf);
   }
   @font-face {
     font-family: "Neue Haas";
     font-style: extrabold;
     font-weight: 800;
     font-display: swap;
-    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Black.ttf);
+    src: url(/src/fonts/neue-haas/NeueHaasDisplay-Bold.ttf);
   }
   @font-face {
     font-family: "Neue Haas";
