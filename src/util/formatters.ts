@@ -98,5 +98,6 @@ export const replaceNonEnglish = (str: string) => {
     .replace("ê", "e")
     .replace("à", "a")
     .replace("È", "E")
+    .replace("ö", "o")
     .replace("…", "...");
 };

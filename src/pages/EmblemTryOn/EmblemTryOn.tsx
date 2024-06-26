@@ -17,6 +17,7 @@ const VerityCallouts: React.FC = () => {
   const { data: emblemData, loading: emblemLoading } = useEmblems();
   const [emblemQuery, setEmblemQuery] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+  const [isLead, setIsLead] = useState(false);
   const [name, setName] = useState(
     searchParams.get("name")
       ? (searchParams.get("name" as string) as string)
@@ -72,14 +73,13 @@ const VerityCallouts: React.FC = () => {
         <Loader />
       ) : (
         <div className="flex w-full flex-col items-center gap-3">
-          <input
-            type="text"
-            placeholder="Name"
-            onChange={handleNameChange}
-            value={name}
-            className="input input-bordered w-full max-w-xs"
+          <EmblemNameplate
+            name={name}
+            setName={setName}
+            emblem={selectedEmblem}
+            isLead={isLead}
           />
-          <EmblemNameplate name={name} emblem={selectedEmblem} />
+          <p>Click on the name to change it!</p>
           <p className="text-lg">
             Trying on{" "}
             <span className="text-primary font-semibold">
@@ -97,16 +97,18 @@ const VerityCallouts: React.FC = () => {
           {showSearch &&
           emblemData.filter(
             (x) =>
-              replaceNonEnglish(x.name).toLowerCase().includes(emblemQuery) &&
+              (replaceNonEnglish(x.name).toLowerCase().includes(emblemQuery) ||
+                x.name.toLowerCase().includes(emblemQuery)) &&
               emblemQuery.length > 0
           ).length > 0 ? (
-            <div className="absolute top-[405px] z-[50] border w-80 rounded gap-1 p-2 flex flex-col bg-base-100">
+            <div className="absolute top-[380px] z-[50] border w-80 rounded gap-1 p-2 flex flex-col bg-base-100">
               {emblemData
                 .filter(
                   (x) =>
-                    replaceNonEnglish(x.name)
+                    (replaceNonEnglish(x.name)
                       .toLowerCase()
-                      .includes(emblemQuery.toLowerCase()) &&
+                      .includes(emblemQuery) ||
+                      x.name.toLowerCase().includes(emblemQuery)) &&
                     emblemQuery.length > 0
                 )
                 .slice(0, 7)
@@ -114,6 +116,7 @@ const VerityCallouts: React.FC = () => {
                   <p
                     className="flex align-left w-full items-center gap-2 hover:cursor-pointer"
                     onMouseDown={() => setSelectedEmblem(emblem)}
+                    key={emblem.hash}
                   >
                     <img
                       className="w-8 rounded"
@@ -148,9 +151,48 @@ const VerityCallouts: React.FC = () => {
             <details className="dropdown dropdown-center">
               <summary className="btn w-24">Tools</summary>
               <ul className="p-2 shadow-xl menu dropdown-content bg-base-100 rounded-box w-52">
-                <li className="pointer-events-none">
-                  <p>Coming soon...</p>
+                <li>
+                  <a
+                    onClick={() =>
+                      setSelectedEmblem(
+                        emblemData[
+                          Math.floor(Math.random() * emblemData.length)
+                        ]
+                      )
+                    }
+                  >
+                    Randomize Emblem
+                  </a>
                 </li>
+                <li>
+                  <a onClick={() => setIsLead((old) => !old)}>
+                    Toggle Fireteam Lead
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={
+                      "https://destinyemblemcollector.com/emblem?id=" +
+                      selectedEmblem.hash
+                    }
+                    target="_blank"
+                  >
+                    View on DEC
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={"https://emblem.report/" + selectedEmblem.hash}
+                    target="_blank"
+                  >
+                    View on emblem.report
+                  </a>
+                </li>
+
+                <li className="pointer-events-none">
+                  <p className="text-neutral">More coming soon...</p>
+                </li>
+
                 {/* <li>
                   <a>Toggle Fireteam Lead</a>
                 </li> */}

@@ -20,7 +20,10 @@ const Home: React.FC = () => {
           An open-source web utility for Destiny 2
         </p>
         <p className="font-light">
-          Made by the founder and developer of Levante
+          Made by the founder and developer of{" "}
+          <a className="underline" href="https://levante.dev" target="_blank">
+            Levante
+          </a>
         </p>
       </div>
       <p className="font-semibold text-1xl font-display tracking-tight text-primary">
@@ -47,8 +50,8 @@ const Home: React.FC = () => {
       <Link to={"/verity-calculator"}>
         <button className={"btn btn-primary"} onClick={() => {}}>
           <svg
-            clip-rule="evenodd"
-            fill-rule="evenodd"
+            clipRule="evenodd"
+            fillRule="evenodd"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
