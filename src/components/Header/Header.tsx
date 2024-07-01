@@ -6,12 +6,12 @@ const Header: React.FC = () => {
   const location = useLocation();
 
   return (
-    <div className="sticky top-0 flex items-center w-full z-[55] pl-10 py-4 shadow bg-base-100 outline outline-1 outline-primary gap-6">
+    <div className="sticky top-0 flex items-center justify-between w-full z-[55] pl-10 py-4 shadow bg-base-100 outline outline-1 outline-primary gap-6">
       <div className="flex gap-2 items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1540 747"
-          className="mb-2 w-16"
+          className="mb-1 w-16"
           fill="currentColor"
         >
           <path d="M1019.52,224.28c98.97,123.27,93.79,314-35.72,431.94-129.07,117.53-327.83,108.76-447.08-20.42-115.54-125.15-103.38-304.78-15.2-411.29,64.95,77.32,147.41,119.44,248.85,119.46,101.46.02,183.94-42.07,249.15-119.69Z" />
@@ -20,8 +20,6 @@ const Header: React.FC = () => {
           <path d="M770.27.03c73.19-1.44,140.37,58.71,140.67,140.05.29,77.47-62.52,140.41-140.33,140.64-77.55.22-140.58-62.51-140.63-140.3C629.92,59.03,697.14-1.25,770.27.03Z" />
         </svg>
         <h2 className="font-display font-bold text-xl text-white">winnow</h2>
-      </div>
-      <div className="flex gap-2">
         {routes.map((route) => (
           <Link
             to={route.path}
@@ -36,6 +34,17 @@ const Header: React.FC = () => {
             {route.name}
           </Link>
         ))}
+      </div>
+      <div className="flex gap-2 pr-6">
+        <Link
+          to={"https://ko-fi.com/oatsfx"}
+          target="_blank"
+          className={
+            "py-2 px-2 transition ease-in-out rounded-lg outline-1 bg-black hover:bg-opacity-70 hover:text-accent bg-opacity-0"
+          }
+        >
+          Support Me
+        </Link>
       </div>
     </div>
   );

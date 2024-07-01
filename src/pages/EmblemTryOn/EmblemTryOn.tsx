@@ -1,8 +1,9 @@
 import { EmblemNameplate } from "components/EmblemNameplate";
 import { Loader } from "components/Loader";
+import { RosterNameplate } from "components/RosterNameplate";
 import { useEmblems } from "hooks/useEmblems";
-import { useEffect, useMemo, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Emblem } from "types/emblem";
 import { Alert } from "types/util";
 import { replaceNonEnglish } from "util/formatters";
@@ -31,6 +32,7 @@ const VerityCallouts: React.FC = () => {
     secondaryIcon: "",
     secondaryOverlay: "",
     secondarySpecial: "",
+    backgroundColor: { r: 0, g: 0, b: 0 },
   });
 
   const handleNameChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -68,6 +70,7 @@ const VerityCallouts: React.FC = () => {
       <p className="font-bold text-2xl font-display tracking-tighter text-accent">
         Emblem Try On
       </p>
+      <p>Click on the name below to change it!</p>
 
       {emblemLoading ? (
         <Loader />
@@ -79,7 +82,12 @@ const VerityCallouts: React.FC = () => {
             emblem={selectedEmblem}
             isLead={isLead}
           />
-          <p>Click on the name to change it!</p>
+          <RosterNameplate
+            name={name}
+            emblem={selectedEmblem}
+            isLead={isLead}
+          />
+
           <p className="text-lg">
             Trying on{" "}
             <span className="text-primary font-semibold">
@@ -101,7 +109,7 @@ const VerityCallouts: React.FC = () => {
                 x.name.toLowerCase().includes(emblemQuery)) &&
               emblemQuery.length > 0
           ).length > 0 ? (
-            <div className="absolute top-[380px] z-[50] border w-80 rounded gap-1 p-2 flex flex-col bg-base-100">
+            <div className="absolute top-[430px] z-[50] border w-80 rounded gap-1 p-2 flex flex-col bg-base-100">
               {emblemData
                 .filter(
                   (x) =>
