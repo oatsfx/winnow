@@ -32,8 +32,8 @@ const Home: React.FC = () => {
       <Link to={"/emblem-try-on"}>
         <button className={"btn btn-primary"} onClick={() => {}}>
           <svg
-            clip-rule="evenodd"
-            fill-rule="evenodd"
+            clipRule="evenodd"
+            fillRule="evenodd"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"

@@ -35,12 +35,20 @@ export const useEmblems = () => {
               const secIcon = jsonData[key].secondaryIcon;
               const secOverlay = jsonData[key].secondaryOverlay;
               const secSpecial = jsonData[key].secondarySpecial;
+              const backgroundColor = jsonData[key].backgroundColor;
 
               // Special name handling
               if (hash === 1968995963) {
                 name += " (Sunflower)";
               }
-              if (name && icon && secIcon && secOverlay && secSpecial) {
+              if (
+                name &&
+                icon &&
+                secIcon &&
+                secOverlay &&
+                secSpecial &&
+                backgroundColor
+              ) {
                 newEmblems.push({
                   hash: hash,
                   name: name,
@@ -48,6 +56,11 @@ export const useEmblems = () => {
                   secondaryIcon: secIcon,
                   secondaryOverlay: secOverlay,
                   secondarySpecial: secSpecial,
+                  backgroundColor: {
+                    r: backgroundColor.red,
+                    g: backgroundColor.green,
+                    b: backgroundColor.blue,
+                  },
                 });
               }
             }

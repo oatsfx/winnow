@@ -5,4 +5,9 @@ export type Emblem = {
   secondaryIcon: string;
   secondaryOverlay: string;
   secondarySpecial: string;
+  backgroundColor: {
+    r: number;
+    g: number;
+    b: number;
+  };
 };
