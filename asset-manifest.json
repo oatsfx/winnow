@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1cad3b25.css",
-    "main.js": "/static/js/main.b6b1e2c6.js",
+    "main.css": "/static/css/main.69ed034c.css",
+    "main.js": "/static/js/main.0bb82488.js",
     "static/js/676.94c0c02a.chunk.js": "/static/js/676.94c0c02a.chunk.js",
     "static/js/821.45fc68b7.chunk.js": "/static/js/821.45fc68b7.chunk.js",
     "static/js/145.cb373dd2.chunk.js": "/static/js/145.cb373dd2.chunk.js",
@@ -33,15 +33,15 @@
     "static/media/OverusedGrotesk-Black.woff2": "/static/media/OverusedGrotesk-Black.9258207facf88206bd35.woff2",
     "static/media/OverusedGrotesk-Light.woff2": "/static/media/OverusedGrotesk-Light.a652c6af025cbab89e6a.woff2",
     "index.html": "/index.html",
-    "main.1cad3b25.css.map": "/static/css/main.1cad3b25.css.map",
-    "main.b6b1e2c6.js.map": "/static/js/main.b6b1e2c6.js.map",
+    "main.69ed034c.css.map": "/static/css/main.69ed034c.css.map",
+    "main.0bb82488.js.map": "/static/js/main.0bb82488.js.map",
     "676.94c0c02a.chunk.js.map": "/static/js/676.94c0c02a.chunk.js.map",
     "821.45fc68b7.chunk.js.map": "/static/js/821.45fc68b7.chunk.js.map",
     "145.cb373dd2.chunk.js.map": "/static/js/145.cb373dd2.chunk.js.map",
     "453.4e35d3fc.chunk.js.map": "/static/js/453.4e35d3fc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cad3b25.css",
-    "static/js/main.b6b1e2c6.js"
+    "static/css/main.69ed034c.css",
+    "static/js/main.0bb82488.js"
   ]
 }
