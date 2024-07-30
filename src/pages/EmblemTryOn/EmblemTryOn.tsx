@@ -98,6 +98,7 @@ const VerityCallouts: React.FC = () => {
             type="text"
             placeholder="Search an emblem"
             className="input input-bordered w-full max-w-xs"
+            id="emblem-search"
             onChange={handleEmblemSearch}
             onFocus={() => setShowSearch(true)}
             onBlur={() => setShowSearch(false)}
@@ -109,7 +110,15 @@ const VerityCallouts: React.FC = () => {
                 x.name.toLowerCase().includes(emblemQuery)) &&
               emblemQuery.length > 0
           ).length > 0 ? (
-            <div className="absolute top-[430px] z-[50] border w-80 rounded gap-1 p-2 flex flex-col bg-base-100">
+            <div
+              className="absolute z-[50] border w-80 rounded gap-1 p-2 flex flex-col bg-base-100"
+              style={{
+                top:
+                  (
+                    document.getElementById("emblem-search") as HTMLElement
+                  ).getBoundingClientRect().y + 50,
+              }}
+            >
               {emblemData
                 .filter(
                   (x) =>
