@@ -6,11 +6,13 @@ const EmblemNameplate = ({
   setName,
   emblem,
   isLead,
+  isOutlined,
 }: {
   name: string;
   setName: (name: string) => void;
   emblem: Emblem;
   isLead: boolean;
+  isOutlined: boolean;
 }) => {
   const [overflowedBy, setOverflowedBy] = useState(0.0);
 
@@ -27,7 +29,11 @@ const EmblemNameplate = ({
       style={{
         backgroundImage: `url(https://www.bungie.net${emblem.secondaryIcon})`,
       }}
-      className="w-[474px] h-[95px] pl-[85px] flex flex-col shadow-lg rounded-sm relative"
+      className={
+        "w-[474px] h-[95px] pl-[85px] flex flex-col shadow-lg rounded-sm relative tooltip tooltip-accent text-left" +
+        (isOutlined ? " outline outline-1 outline-offset-2 outline-white" : "")
+      }
+      data-tip="Click the name here to change it"
     >
       {isLead ? (
         <svg
@@ -49,7 +55,7 @@ const EmblemNameplate = ({
       </p>
       <input
         type="text"
-        placeholder="Click to change"
+        placeholder="Click here to change"
         value={name}
         onChange={handleNameChange}
         onBlur={(e) => {
@@ -63,7 +69,7 @@ const EmblemNameplate = ({
           setOverflowedBy(0);
         }}
         className={
-          "-ml-[16.5px] -m-[3.5px] input max-w-[19.5rem] bg-transparent outline-transparent " +
+          "-ml-[16.5px] -m-[3.5px] input hover:input-bordered hover:border-white transition max-w-[19.5rem] bg-transparent outline-transparent " +
           "font-emblem tracking-[0.8px] font-semibold text-white placeholder-white drop-shadow-[0_2px_0px_#0003]"
         }
         style={{ fontSize: overflowedBy > 0.0 ? 27.0 / overflowedBy : 27 }}

@@ -260,7 +260,7 @@ const VerityCalculator: React.FC = () => {
 
   return (
     <div className="flex w-full flex-col items-center gap-2">
-      <p className="font-bold text-2xl font-display tracking-tighter text-accent">
+      <p className="font-bold text-3xl font-display tracking-tighter text-accent">
         Verity Calculator
       </p>
       <p className="text-xl font-semibold text-primary">Inside / Solo</p>
