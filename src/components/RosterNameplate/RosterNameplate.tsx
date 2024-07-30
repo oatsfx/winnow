@@ -10,14 +10,12 @@ const RosterNameplate = ({
   emblem: Emblem;
   isLead: boolean;
 }) => {
-  const [overflowedBy, setOverflowedBy] = useState(0.0);
-
   return (
     <div
       style={{
         background: `rgba(${emblem.backgroundColor.r}, ${emblem.backgroundColor.g}, ${emblem.backgroundColor.b})`,
       }}
-      className="w-[474px] h-[45px] flex flex-col shadow-lg rounded-sm relative tooltip tooltip-accent"
+      className="w-[474px] h-[45px] flex flex-col shadow-lg relative tooltip tooltip-accent"
       data-tip="The color is likely different from in-game. This is a limitation of Bungie's API reporting incorrect background colors."
     >
       {isLead ? (
