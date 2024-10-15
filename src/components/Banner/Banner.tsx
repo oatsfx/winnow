@@ -4,9 +4,9 @@ const Banner: React.FC = () => {
   return (
     <div className="bg-primary/10 items-center text-center p-1 w-full bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient">
       <Link
-        to="https://donate.tiltify.com/dac29dad-5433-4ac2-9417-b3b5f832fec2"
+        to="https://donate.tiltify.com/692dd479-4c37-4bca-a394-9931cfba71ab/"
         target="_blank"
-        className="text-accent underline hover:text-white"
+        className="text-accent shadow-sm underline hover:text-white"
       >
         Support the Bungie Foundation!
       </Link>
